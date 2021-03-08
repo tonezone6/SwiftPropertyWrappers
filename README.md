@@ -2,20 +2,6 @@
 
 ### Improving the model layer using Swift property wrappers.
 
-```swift
-import SwiftPropertyWrappers
-
-struct Product: Decodable {
-    @Capitalized var name: String
-    @Currency    var price: String
-    @DateISO8601 var date: Date
-    
-    var since: String {
-        DateFormatter.mediumStyle.string(from: date)
-    }
-}
-```
-
 ```json
 [
     {
@@ -36,6 +22,22 @@ struct Product: Decodable {
 ]
 ```
 
+```swift
+import SwiftPropertyWrappers
+
+struct Product: Decodable {
+    @Capitalized var name: String
+    @Currency    var price: String
+    @DateISO8601 var date: Date
+    
+    var since: String {
+        DateFormatter.mediumStyle.string(from: date)
+    }
+}
+```
+
+Output
+
 ```bash
 Croisant
 price: $1.00
@@ -49,5 +51,3 @@ Coffee
 price: $2.50
 since: Feb 28, 2020
 ```
-
-
