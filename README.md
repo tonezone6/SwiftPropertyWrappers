@@ -1,4 +1,4 @@
-# Swift Property Wrappers
+# Swift property wrappers
 
 ### Improving the model layer using Swift property wrappers.
 
